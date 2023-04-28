@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "RemoveGmailAdds",
+  "description": "Remove the Gmail adds, based on the 'Annonce' text used in French",
+  "author": "mathieuv@frenchtoast.dev",
+  "version": "0.1",
+  "icons": {
+    "64": "icons/icon.png",
+    "128": "icons/icon-128.png"
+  },
+  "browser_action": {
+    "default_area": "navbar",
+    "default_icon": "icons/icon.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://mail.google.com/*"
+      ],
+      "js": [
+        "content_script.js"
+      ]
+    }
+  ]
+}
